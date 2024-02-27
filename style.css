@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+}
+
+.project-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+.contact-form label {
+    margin-bottom: 5px;
+}
+
+.contact-form input, .contact-form textarea {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contact-form button {
+    padding: 10px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
