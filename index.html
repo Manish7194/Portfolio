@@ -39,15 +39,56 @@
 
     <section id="contact">
         <h2>Contact</h2>
-        <form action="#" method="post">
+        <form id="contact-form" action="#" method="post">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" required minlength="3">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
             <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
+            <textarea id="message" name="message" rows="4" required minlength="10"></textarea>
             <button type="submit">Send</button>
         </form>
     </section>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const messageInput = document.getElementById('message');
+            
+            let isValid = true;
+
+            if (nameInput.value.length < 3) {
+                isValid = false;
+                nameInput.style.borderColor = 'red';
+            } else {
+                nameInput.style.borderColor = '';
+            }
+
+            if (!validateEmail(emailInput.value)) {
+                isValid = false;
+                emailInput.style.borderColor = 'red';
+            } else {
+                emailInput.style.borderColor = '';
+            }
+
+            if (messageInput.value.length < 10) {
+                isValid = false;
+                messageInput.style.borderColor = 'red';
+            } else {
+                messageInput.style.borderColor = '';
+            }
+
+            if (!isValid) {
+                event.preventDefault(); // Prevent form submission if validation fails
+            }
+        });
+
+        function validateEmail(email) {
+            const re = /\S+@\S+\.\S+/;
+            return re.test(email);
+        }
+    </script>
 </body>
 </html>
+
